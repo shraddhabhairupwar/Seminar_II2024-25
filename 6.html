@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String and Number Operations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: orange;
+    }
+    .container {
+      background: #4A686A;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    input, button {;
+      padding: 10px;
+      margin: 10px 0;
+      width: 95%;
+      font-size: 16px;
+    }
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>String Length Calculator</h2>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="calculateLength()">Get Length</button>
+    <div class="result" id="stringResult"></div>
+
+    <h2>Reverse Digits of Number</h2>
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+    <button onclick="reverseDigits()">Reverse Number</button>
+    <div class="result" id="numberResult"></div>
+  </div>
+
+  <script>
+    function calculateLength() {
+      const str = document.getElementById('inputString').value;
+      const length = str.length;
+      document.getElementById('stringResult').innerText = "Length: " + length;
+    }
+
+    function reverseDigits() {
+      const num = document.getElementById('inputNumber').value;
+      const reversed = num.split('').reverse().join('');
+      document.getElementById('numberResult').innerText = "Reversed: " + reversed;
+    }
+  </script>
+
+</body>
+</html>
