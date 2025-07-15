@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Prime Numbers</title> 
+ 
+  <style> 
+ 
+    body { 
+      font-family: Arial; 
+      padding: 50px; 
+      background-color: violet;    
+    } 
+ 
+    .container{ 
+      margin: 35px auto; 
+      max-width:400px; 
+      padding: 40px; 
+      background-color: #FADADD; 
+      text-align: center; 
+      justify-content: center; 
+      border-radius: 10px; 
+    } 
+ 
+    input, button { 
+      margin: 10px; 
+      padding: 15px; 
+      background-color: violet; 
+     width: 200px; 
+    } 
+ 
+    #result { 
+      margin-top: 15px; 
+      font-weight: bold; 
+    } 
+ 
+  </style> 
+</head> 
+<body> 
+ 
+<div class="container"> 
+  <h2>Prime Numbers Finder</h2> 
+ 
+  Start: <input type="number" id="start"><br> 
+  End: <input type="number" id="end"><br> 
+ 
+  <button onclick="showPrimes()">Show Prime Numbers</button> 
+  <div id="result"></div> 
+ 
+</div> 
+ 
+  <script> 
+ 
+    function isPrime(n) { 
+      if (n < 2) return false; 
+      for (let i = 2; i <= n - 1; i++) { 
+        if (n % i == 0) return false; 
+      } 
+      return true; 
+    } 
+ 
+    function showPrimes() { 
+      let start = parseInt(document.getElementById("start").value); 
+      let end = parseInt(document.getElementById("end").value); 
+      let result = ""; 
+      for (let i = start; i <= end; i++) { 
+        if (isPrime(i)) { 
+          result += i + " "; 
+        } 
+      } 
+ 
+      document.getElementById("result").innerText = "Primes: " + result; 
+    } 
+ 
+  </script> 
+</body> 
+</html>
