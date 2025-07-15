@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shraddha Garments</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 90px;
+      background: #1c1c1c;
+      color: #f7c600;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+     .about-modern {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1602810311511-93b6f23604d2') no-repeat center center/cover;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.about-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  padding: 60px 20px;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #f7c600;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.about-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 24px;
+  background-color: #f7c600;
+  color: #002b5c;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: background 0.3s;
+}
+
+.about-btn:hover {
+  background-color: #e6b800;
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+  min-width: 280px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+    .services-modern {
+  background: url('https://images.unsplash.com/photo-1584943941825-e0432fdd92fb') no-repeat center center/cover;
+  color: #fff;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.services-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 60px 20px;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-container h2 {
+  font-size: 36px;
+  color: #f7c600;
+  margin-bottom: 10px;
+}
+
+.services-subtitle {
+  font-size: 18px;
+  margin-bottom: 50px;
+  color: #ddd;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px 20px;
+  border-radius: 16px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.service-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: #f7c600;
+  padding: 10px;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #ccc;
+}
+    .gallery-section {
+  background: url('https://images.unsplash.com/photo-1602810317238-f66a9f24c163') no-repeat center center/cover;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.gallery-overlay {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 60px 20px;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.gallery-container h2 {
+  font-size: 36px;
+  color: #f7c600;
+  margin-bottom: 10px;
+}
+
+.gallery-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #ddd;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+    .process-section {
+  background: #111;
+  color: #fff;
+  padding: 60px 20px;
+}
+
+.process-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.process-container h2 {
+  font-size: 36px;
+  color: #f7c600;
+  margin-bottom: 10px;
+}
+
+.process-subtitle {
+  color: #ccc;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.step-box {
+  background: #1b1b1b;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(247, 198, 0, 0.3);
+}
+
+.step-number {
+  display: inline-block;
+  background: #f7c600;
+  color: #111;
+  font-size: 22px;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+    #contact {
+  background: linear-gradient(to right, #002b5c, #003f7f);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+}
+
+.contact-container {
+  background-color: #ffffff;
+  color: #002b5c;
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.contact-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.contact-container p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.instagram a {
+  display: inline-block;
+  margin-top: 20px;
+  background: #f7c600;
+  color: #002b5c;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.instagram a:hover {
+  background: #e6b800;
+}
+     .nav-menu a {
+      color: #ffffff;
+      margin-left: 30px;
+      text-decoration: none;
+      front-size: 18px;
+      front-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-menu a:hover {
+      color: #f7c600;
+}
+    .section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 60px; /* to avoid header overlap */
+    }
+    #about {
+ background: #f0f0f0;
+ }
+    #services {
+ background: #e0e0e0;
+ }
+    #gallery {
+ background: #d0d0d0;
+ }
+    #process {
+ background: #c0c0c0;
+ }
+    #contact {
+ background: #909090;
+ }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">SHRADDHA GARMENTS</div>
+    <nav class="nav-menu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about-modern" id="about">
+  <div class="about-overlay">
+    <div class="about-container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About Us</h2>
+          <p>
+            At <strong>Shraddha Garments</strong>, we specialize in stitching custom blazers, sherwanis, and Jodhpuri suits for men—perfect for weddings and special functions.
+            <br><br>
+            Our tailoring ensures a <strong>perfect fit</strong> using your exact measurements. Experience a royal look with our modern yet traditional craftsmanship.
+          </p>
+          <a href="#services" class="about-btn">Explore Our Services</a>
+        </div>
+        <div class="about-image">
+          <img src="https://th.bing.com/th/id/OIP.JnW7jy4JYDGIOtOdvApxkAHaJ3?rs=1&pid=ImgDetMain/500x600?text=Custom+Blazer" alt="Custom Blazer" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="services-modern" id="services">
+  <div class="services-overlay">
+    <div class="services-container">
+      <h2>Our Services</h2>
+      <p class="services-subtitle">
+        Premium tailoring designed for timeless elegance and flawless fit.
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://th.bing.com/th/id/OIP.hr8pgaI1CHwT9ZlfwJdZ9gHaH5?rs=1&pid=ImgDetMain/100x100?text=Blazer" alt="Custom Blazers">
+          <h3>Custom Blazers</h3>
+          <p>
+            Elegantly tailored blazers for all occasions with a sharp, royal finish.
+          </p>
+        </div>
+        <div class="service-card">
+          <img src="https://i.pinimg.com/736x/88/86/17/888617428597d4cb1bd4f6e4450d0c97--sherwani-groom-wedding-sherwani.jpg/100x100?text=Sherwani" alt="Sherwanis">
+          <h3>Sherwanis</h3>
+          <p>
+            Traditional meets trend—perfectly fitted sherwanis for weddings and festivals.
+          </p>
+        </div>
+        <div class="service-card">
+          <img src="https://www.rajwadi.com/image/cache/data/men-s-wedding-cream-embroidered-sherwani-set-41871-800x1100.jpg/100x100?text=Jodhpuri" alt="Jodhpuri Suits">
+          <h3>Jodhpuri Suits</h3>
+          <p>
+            A touch of royalty with modern grace in every Jodhpuri suit we stitch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="gallery-section" id="gallery">
+  <div class="gallery-overlay">
+    <div class="gallery-container">
+      <h2>Our Gallery</h2>
+      <p class="gallery-subtitle">Experience elegance through our finest tailored creations.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://th.bing.com/th/id/OIP.WQMa98rmQkZynGGVX1ATVwHaLH?rs=1&pid=ImgDetMain/300x400?text=Blazer+1" alt="Blazer Design 1">
+        </div>
+        <div class="gallery-item">
+          <img src="https://readiprintfashions.files.wordpress.com/2022/02/indian-sherwani.jpg?w=725/300x400?text=Sherwani+1" alt="Sherwani Design 1">
+        </div>
+        <div class="gallery-item">
+          <img src="https://th.bing.com/th/id/OIP.RjGjPfw4zkeY_rJyC9vaIQHaLH?rs=1&pid=ImgDetMain/300x400?text=Jodhpuri+1" alt="Jodhpuri Design 1">
+        </div>
+        <div class="gallery-item">
+          <img src="https://th.bing.com/th/id/OIP.ilin6vdLuSqYsLwn6YMUrAHaLn?rs=1&pid=ImgDetMain/300x400?text=Blazer+2" alt="Blazer Design 2">
+        </div>
+        <div class="gallery-item">
+          <img src="https://cdn.shopify.com/s/files/1/0626/1483/1280/products/ETW1332-9032.jpg?v=1677931402/300x400?text=Sherwani+2" alt="Sherwani Design 2">
+        </div>
+        <div class="gallery-item">
+          <img src="https://gauravkatta.co/cdn/shop/products/101-0918_3.jpg?v=1684916234/300x400?text=Jodhpuri+2" alt="Jodhpuri Design 2">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="process-section" id="process">
+  <div class="process-container">
+    <h2>Our Process</h2>
+    <p class="process-subtitle">Your perfect outfit, crafted in 6 simple steps</p>
+    <div class="process-steps">
+      <div class="step-box">
+        <span class="step-number">1</span>
+        <h3>Visit Our Shop</h3>
+        <p>Walk into Shraddha Garments and begin your journey toward elegance.</p>
+      </div>
+      <div class="step-box">
+        <span class="step-number">2</span>
+        <h3>Get Measured</h3>
+        <p>Our experts take your exact measurements for the perfect fit.</p>
+      </div>
+      <div class="step-box">
+        <span class="step-number">3</span>
+        <h3>Select Your Design</h3>
+        <p>Choose from premium blazer, sherwani, or Jodhpuri styles—or customize your own.</p>
+      </div>
+      <div class="step-box">
+        <span class="step-number">4</span>
+        <h3>Bring Your Fabric</h3>
+        <p>You bring the fabric, we bring the craftsmanship.</p>
+      </div>
+      <div class="step-box">
+        <span class="step-number">5</span>
+        <h3>Try It On</h3>
+        <p>Attend a trial fitting to ensure every detail is perfect.</p>
+      </div>
+      <div class="step-box">
+        <span class="step-number">6</span>
+        <h3>Collect Your Outfit</h3>
+        <p>Pick up your final tailored outfit and wear it with confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="section" id="contact">
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <p><strong>Phone:</strong> +91-9822763001</p>
+    <p><strong>Location:</strong> Dattanagar Main Road, Nanded-431602, Maharashtra</p>
+    <div class="instagram">
+      <a href="https://instagram.com/yourprofile" target="_blank">Follow us on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<h2>Shop</h2>
+<img scr="shop.jpeg">
+</body>
+</html>
